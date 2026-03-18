@@ -11,7 +11,7 @@ bankResult();
 
     }
     public  static void bankResult(){
-        Userfield bankAccount=new Userfield(123,50,13105620);
+        Userfield bankAccount=new Userfield(123,50,13105620,"samuel okoh");
         Bankcheck Bankcheckinstance=new Bankcheck(bankAccount);
 
 
@@ -19,7 +19,10 @@ bankResult();
         boolean bankValidCheck=Bankcheckinstance.accNumberCheck();
 if(bankValidCheck){
     Bankcheckinstance.withdrawalUpdate();
+    String customerName = bankAccount.customerName;
+    System.out.println();
 }
+
 
 
 

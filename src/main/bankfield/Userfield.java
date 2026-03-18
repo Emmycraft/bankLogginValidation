@@ -13,11 +13,12 @@ public class Userfield {
 
 
     //creating a constructor
-    public Userfield(int cusBvn,double withdrawal,int customerAccountNumber
+    public Userfield(int cusBvn,double initialBalance,int customerAccountNumber,String accountName
     ){
         this.customerBvn=cusBvn;
-        this.customerAccountBalance=withdrawal;
+        this.customerAccountBalance=initialBalance;
         this.customerAccountNumber=customerAccountNumber;
+        customerName=accountName;
     }
 
     public void setCustomerBvn(int customerBvn) {
