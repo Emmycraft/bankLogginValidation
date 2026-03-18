@@ -11,13 +11,18 @@ bankResult();
 
     }
     public  static void bankResult(){
-        Userfield bankAccount=new Userfield(123);
+        Userfield bankAccount=new Userfield(123,50,13105620);
         Bankcheck Bankcheckinstance=new Bankcheck(bankAccount);
 
-        String bankCheckInstance=Bankcheckinstance.accNumberCheck();
+
+        bankAccount.setCustomerBvn(333);
+        boolean bankValidCheck=Bankcheckinstance.accNumberCheck();
+if(bankValidCheck){
+    Bankcheckinstance.withdrawalUpdate();
+}
 
 
-        System.out.println(bankCheckInstance);
+
 
     };
 

@@ -4,8 +4,8 @@ public class Userfield {
 
     //adding the field of the class
     private  int customerBvn;
-    private int customerAccountNumber=222222;
-    private int customerAccountBalance;
+    private int customerAccountNumber;
+    private double customerAccountBalance;
     public String customerName;
     private static String customerEmail;
     private int customerPhoneNumber;
@@ -13,8 +13,11 @@ public class Userfield {
 
 
     //creating a constructor
-    public Userfield(int cusBvn){
+    public Userfield(int cusBvn,double withdrawal,int customerAccountNumber
+    ){
         this.customerBvn=cusBvn;
+        this.customerAccountBalance=withdrawal;
+        this.customerAccountNumber=customerAccountNumber;
     }
 
     public void setCustomerBvn(int customerBvn) {
@@ -32,8 +35,9 @@ public class Userfield {
     }
 
     //calculating the balance
-    public int calculateBalance(){
-        customerAccountBalance=250;
+
+
+    public double getCustomerAccountBalance() {
         return customerAccountBalance;
     }
 }

@@ -26,31 +26,50 @@ public Bankcheck(Userfield userAccount){
         return bvnConvert;
 
     }
-    public String accNumberCheck(){
+    public boolean accNumberCheck(){
         int systemBvn = bankAccount.getCustomerBvn();
         int bvnCheck=bvnAccountMethod();
         try {
             if(bvnCheck!=systemBvn){
-                return "invalid bvn";
+System.out.println("invalid");
+                return false;
             }
 
-            System.out.println("bvn check is valid");
             System.out.println("please enter your account number for loggin check :");
             String accCheck = scanner.nextLine();
             int accConverted=Integer.parseInt(accCheck);
             if (accConverted == bankAccount.getCustomerAccountNumber()) {
                 System.out.println("you are logged in successfully");
-                return "success";
+                return true;
             }
             else{
-                return "invalid detail";
+                return false;
             }
 
         } catch (NumberFormatException e) {
-            return "invalid parsed data";
+            System.out.println(e.getMessage());
+            return false;
 
         }
 
     }
+    public void  withdrawalUpdate(){
+        //using scanner to input withdrawal amount
+        System.out.println("how much do you want to withdraw ?");
+
+        String inputWithdrawal= scanner.nextLine();
+        double withdrawalConverted=Double.parseDouble(inputWithdrawal);
+        double currentBalance=bankAccount.getCustomerAccountBalance() ;
+        if(currentBalance-withdrawalConverted<=0){
+            System.out.println(" withdrawal cannot be proceed, insufficient funds");
+
+        }
+        currentBalance-=withdrawalConverted;
+        System.out.println("account has been debited #"+inputWithdrawal +
+                "current balance is  #" +
+                +currentBalance);
+
+    };
+
 
 }
