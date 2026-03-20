@@ -15,12 +15,14 @@ bankResult();
         Bankcheck Bankcheckinstance=new Bankcheck(bankAccount);
 
 
+
         bankAccount.setCustomerBvn(333);
         boolean bankValidCheck=Bankcheckinstance.accNumberCheck();
 if(bankValidCheck){
     Bankcheckinstance.withdrawalUpdate();
     String customerName = bankAccount.customerName;
-    System.out.println();
+    System.out.println(customerName);
+
 }
 
 
